@@ -11,7 +11,7 @@ import { SuggestedProduct } from '../models/models';
 export class HomeComponent implements OnInit {
 suggestedProducts: SuggestedProduct[] = [
 {
-  banerimage: "",
+  banerimage: '../../assets/Images/Baner/Baner_scarpe.jpg.jpg',
   category: {
     id: 1,
     category: 'calzature',

@@ -3,7 +3,13 @@
     class="mb-4 my-shadow my-rounded-corner overflow-hidden"
     *ngFor="let suggestedProduct of suggestedProducts"
   >
-    <div class="product-baner">Baner</div>
+    <div class="product-baner">
+      <img
+        [src]="suggestedProduct.banerimage"
+        class="w-100"
+        alt="Baner Image"
+      />
+    </div>
     <div class="product-list">
       <app-suggested-products
         [category]="suggestedProduct.category"
