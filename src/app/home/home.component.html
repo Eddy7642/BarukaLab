@@ -1,0 +1,13 @@
+<div class="my-container mx-auto border">
+  <div
+    class="mb-4 my-shadow my-rounded-corner overflow-hidden"
+    *ngFor="let suggestedProduct of suggestedProducts"
+  >
+    <div class="product-baner">Baner</div>
+    <div class="product-list">
+      <app-suggested-products
+        [category]="suggestedProduct.category"
+      ></app-suggested-products>
+    </div>
+  </div>
+</div>
