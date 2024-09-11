@@ -11,7 +11,7 @@ import { SuggestedProduct } from '../models/models';
 export class HomeComponent implements OnInit {
 suggestedProducts: SuggestedProduct[] = [
 {
-  banerimage: '../../assets/Images/Baner/Baner_scarpe.jpg.jpg',
+  banerimage: '../../assets/Images/Baner/Baner scarpe.jpg',
   category: {
     id: 1,
     category: 'calzature',
@@ -19,7 +19,7 @@ suggestedProducts: SuggestedProduct[] = [
   },
 },
 {
-  banerimage: "",
+  banerimage: "../../assets/Images/Baner/Baner giacche.jpg",
   category: {
     id: 1,
     category: 'abbigliamento',
@@ -27,7 +27,7 @@ suggestedProducts: SuggestedProduct[] = [
   },
 },
 {
-  banerimage: "",
+  banerimage: "../../assets/Images/Baner/Baner portachiavi.jpg",
   category: {
     id: 1,
     category: 'accessori',
@@ -35,7 +35,7 @@ suggestedProducts: SuggestedProduct[] = [
   },
 },
 {
-  banerimage: "",
+  banerimage: "../../assets/Images/Baner/Baner calzolaio.jpg",
   category: {
     id: 1,
     category: 'accessori',
