@@ -15,7 +15,7 @@ suggestedProducts: SuggestedProduct[] = [
   category: {
     id: 1,
     category: 'calzature',
-    subcategory: 'scarpe'
+    subCategory: 'scarpe'
   },
 },
 {
@@ -23,7 +23,7 @@ suggestedProducts: SuggestedProduct[] = [
   category: {
     id: 1,
     category: 'abbigliamento',
-    subcategory: 'giubotti'
+    subCategory: 'giubotti'
   },
 },
 {
@@ -31,7 +31,7 @@ suggestedProducts: SuggestedProduct[] = [
   category: {
     id: 1,
     category: 'accessori',
-    subcategory: 'portachiavi'
+    subCategory: 'portachiavi'
   },
 },
 {
@@ -39,7 +39,7 @@ suggestedProducts: SuggestedProduct[] = [
   category: {
     id: 1,
     category: 'accessori',
-    subcategory: 'calzolaio'
+    subCategory: 'calzolaio'
   },
 }
 

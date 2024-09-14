@@ -3,6 +3,7 @@ import { Category, NavigationItem } from '../models/models';
 import { LoginComponent } from '../login/login.component';
 import { RegisterComponent } from '../register/register.component';
 import { NavigationService } from '../services/navigation.service';
+import { UtilityService } from '../services/utility.service';
 
 
 @Component({
@@ -14,6 +15,7 @@ export class HeaderComponent implements OnInit {
   @ViewChild('modalTitle') modalTitle!: ElementRef;
   @ViewChild('container', { read: ViewContainerRef, static: true })
   container!: ViewContainerRef;
+  cartItems: number = 0;
 
   navigationList: NavigationItem[] = [
 
@@ -26,7 +28,11 @@ export class HeaderComponent implements OnInit {
       subcategories: ['portachiavi', 'calzolaio']
     }, // add more categories as needed
   ];
-  constructor(private navigationService: NavigationService) {}
+subCategory: any;
+  constructor(private navigationService: NavigationService,
+  public utilityService: UtilityService
+  )
+  {}
 
   ngOnInit(): void {
     // Get Category List
@@ -35,14 +41,14 @@ export class HeaderComponent implements OnInit {
         let present = false;
         for (let navItem of this.navigationList) {
           if (navItem.category === item.category) {
-            navItem.subcategories.push(item.subcategory);
+            navItem.subcategories.push(item.subCategory);
             present = true;
           }
         }
         if (!present) {
           this.navigationList.push({
             category: item.category,
-            subcategories: [item.subcategory],
+            subcategories: [item.subCategory],
           });
         }
       }

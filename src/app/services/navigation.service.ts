@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { map } from 'rxjs';
 import { Category } from '../models/models';
@@ -19,11 +19,20 @@ export class NavigationService {
           let mappedCategory: Category = {
             id: category.id,
             category: category.category,
-            subcategory: category.subCategory,
+            subCategory: category.subCategory,
           };
           return mappedCategory;
         })
       )
     );
+  }
+
+  getProducts(category: string, subcategory: string, count: number) {
+    return this.http.get<any[]>(this.baseurl + 'GetProducts', {
+      params: new HttpParams()
+        .set('category', category)
+        .set('subcategory', subcategory)
+        .set('count', count),
+    });
   }
 }

@@ -22,5 +22,13 @@ namespace BarukaLab.API.Controllers
       var result = dataAccess.GetProductCategories();
       return Ok(result);
     }
+
+    [HttpGet("GetProducts")]
+    public IActionResult GetProducts(string category, string subcategory, int count)
+    {
+      var result = dataAccess.GetProducts(category, subcategory, count);
+      return Ok(result);
+    }
+
   }
 }
