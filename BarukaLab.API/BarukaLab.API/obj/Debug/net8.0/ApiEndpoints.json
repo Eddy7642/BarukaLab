@@ -1,0 +1,12 @@
+[
+  {
+    "ContainingType": "BarukaLab.API.Controllers.ShoppingController",
+    "Method": "GetCategoryList",
+    "RelativePath": "api/Shopping/GetCategoryList",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  }
+]

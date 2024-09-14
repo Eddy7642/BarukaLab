@@ -1,7 +1,8 @@
 import { Component, ElementRef, OnInit, Type, ViewChild, ViewContainerRef } from '@angular/core';
-import { NavigationItem } from '../models/models';
+import { Category, NavigationItem } from '../models/models';
 import { LoginComponent } from '../login/login.component';
 import { RegisterComponent } from '../register/register.component';
+import { NavigationService } from '../services/navigation.service';
 
 
 @Component({
@@ -25,11 +26,29 @@ export class HeaderComponent implements OnInit {
       subcategories: ['portachiavi', 'calzolaio']
     }, // add more categories as needed
   ];
-  constructor() {}
+  constructor(private navigationService: NavigationService) {}
 
   ngOnInit(): void {
-
+    // Get Category List
+    this.navigationService.getCategoryList().subscribe((list: Category[]) => {
+      for (let item of list) {
+        let present = false;
+        for (let navItem of this.navigationList) {
+          if (navItem.category === item.category) {
+            navItem.subcategories.push(item.subcategory);
+            present = true;
+          }
+        }
+        if (!present) {
+          this.navigationList.push({
+            category: item.category,
+            subcategories: [item.subcategory],
+          });
+        }
+      }
+    });
   }
+
   openModal(name: string) {
     this.container.clear();
 
