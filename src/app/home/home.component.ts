@@ -14,7 +14,7 @@ suggestedProducts: SuggestedProduct[] = [
   banerimage: '../../assets/Images/Baner/Baner scarpe.jpg',
   category: {
     id: 1,
-    category: 'calzature',
+    category: 'abbigliamento',
     subCategory: 'scarpe'
   },
 },
@@ -23,7 +23,7 @@ suggestedProducts: SuggestedProduct[] = [
   category: {
     id: 1,
     category: 'abbigliamento',
-    subCategory: 'giubotti'
+    subCategory: 'giacche'
   },
 },
 {
