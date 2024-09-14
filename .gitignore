@@ -40,3 +40,4 @@ testem.log
 # System files
 .DS_Store
 Thumbs.db
+/BarukaLab.API/.vs/BarukaLab.API/FileContentIndex/1d4352c6-70f1-4598-9242-fde41bab536c.vsidx
