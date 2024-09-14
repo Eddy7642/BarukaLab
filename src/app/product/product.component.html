@@ -48,9 +48,13 @@
         class="col-md-4 overflow-hidden d-flex justify-content-center align-items-center"
       >
         <img
-          src="../../assets/Images/Scarpe/1/1.jpeg"
+          src="../../assets/Images/{{ product.productCategory.subCategory }}/{{
+            product.id
+          }}/1.jpg"
           class="img-fluid rounded-start"
           alt="Product Image"
+          OpenProductDetails
+          [productId]="product.id"
         />
       </div>
 
@@ -61,10 +65,10 @@
           <h4 class="card-title text-muted">Pricing</h4>
           <h2 class="card-title text-success">
             Final Price
-            <span class="text-primary">-20%</span>
+            <span class="text-primary">-{{ product.offer.discount }}%</span>
           </h2>
           <h5 class="card-subtitle text-danger text-decoration-line-through">
-            Original Price
+            {{ product.price }}
           </h5>
         </div>
 
@@ -97,9 +101,12 @@
       </div>
       <div class="col-8">
         <div class="card-body">
-          <h5 class="card-title title">Title</h5>
+          <h5 class="card-title title">{{ product.title }}</h5>
           <h5 class="card-title text-success">
-            Final Price <span class="text-primary">11 product available</span>
+            Final Price
+            <span class="text-primary">
+              {{ product.quantity }} product available</span
+            >
           </h5>
           <h6 class="card-subtitle text-danger text-decoration-line-through">
             Original Price
@@ -122,15 +129,17 @@
       class="overflow-hidden d-flex justify-content-center align-items-center"
     >
       <img
-        src="../../assets/Images/Scarpe/1/1.jpeg"
+        src="../../assets/Images/{{ product.productCategory.subCategory }}/{{
+          product.id
+        }}/1.jpg"
         class="card-img-top"
         alt="Product Image"
         OpenProductDetails
-        [productId]="1"
+        [productId]="product.id"
       />
     </div>
     <div class="card-body">
-      <h5 class="card-title title">Title</h5>
+      <h5 class="card-title title">{{ product.title }}</h5>
     </div>
   </div>
 </div>
