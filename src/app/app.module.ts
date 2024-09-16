@@ -19,6 +19,7 @@ import { OpenProductDetailsDirective } from './directives/open-product-details.d
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
+import { RouterModule } from '@angular/router';
 
 
 
@@ -42,14 +43,14 @@ import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http'
     OpenProductDetailsDirective,
     RegisterComponent,
     LoginComponent,
-    
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    
-    
+    RouterModule
+
   ],
   providers: [provideHttpClient(withInterceptorsFromDi()),],
   bootstrap: [AppComponent]

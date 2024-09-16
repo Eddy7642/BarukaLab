@@ -2,7 +2,11 @@
   class="w-100 h-100 bg-dark px-4 my-shadow d-flex justify-content-between align-items-center"
 >
   <div class="text-light fs-2 fw-bold fst-italic">
-    <span>Baruka Lab</span>
+    <img
+      src="../../assets/Images/Logo/Logo BarukaLab.jpg"
+      alt="Logo BK"
+      class="navbar-logo"
+    />
   </div>
 
   <div class="btn-toolbar" role="toolbar">
@@ -20,7 +24,7 @@
         </button>
         <ul class="dropdown-menu fs-5">
           <ng-container *ngFor="let item of navigationList; let i = index">
-            <li class="text-center fw-bold">{{ item.category | titlecase }}</li>
+            <!--<li class="text-center fw-bold">{{ item.category | titlecase }}</li>-->
             <li
               *ngFor="let subcategory of item.subcategories"
               [style.cursor]="'pointer'"
