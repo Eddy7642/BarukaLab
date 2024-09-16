@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { NavigationService } from '../services/navigation.service';
+import { UtilityService } from '../services/utility.service';
 
 @Component({
   selector: 'app-login',
@@ -10,11 +11,12 @@ import { NavigationService } from '../services/navigation.service';
 export class LoginComponent implements OnInit {
   loginForm!: FormGroup;
   message = '';
-  utilityService: any;
+
 
   constructor(
     private fb: FormBuilder,
     private navigationService: NavigationService,
+    private utilityService: UtilityService
   ) { }
 
   ngOnInit(): void {

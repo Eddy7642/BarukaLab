@@ -134,6 +134,42 @@ namespace BarukaLab.API.DataAccess
       return productCategory;
     }
 
+    public List<Review> GetProductReviews(int productId)
+    {
+      var reviews = new List<Review>();
+      using (SqlConnection connection = new(dbconnection))
+      {
+        SqlCommand command = new()
+        {
+          Connection = connection
+        };
+
+        string query = "SELECT * FROM Reviews WHERE ProductId=" + productId + ";";
+        command.CommandText = query;
+
+        connection.Open();
+        SqlDataReader reader = command.ExecuteReader();
+        while (reader.Read())
+        {
+          var review = new Review()
+          {
+            Id = (int)reader["ReviewId"],
+            Value = (string)reader["Review"],
+            CreatedAt = (string)reader["CreatedAt"]
+          };
+
+          var userid = (int)reader["UserId"];
+          review.User = GetUser(userid);
+
+          var productid = (int)reader["ProductId"];
+          review.Product = GetProduct(productid);
+
+          reviews.Add(review);
+        }
+      }
+      return reviews;
+    }
+
     public List<Product> GetProducts(string category, string subcategory, int count)
     {
       var products = new List<Product>();
@@ -173,6 +209,55 @@ namespace BarukaLab.API.DataAccess
         }
       }
       return products;
+    }
+    public User GetUser(int id)
+    {
+      var user = new User();
+      using (SqlConnection connection = new(dbconnection))
+      {
+        SqlCommand command = new()
+        {
+          Connection = connection
+        };
+
+        string query = "SELECT * FROM Users WHERE UserId=" + id + ";";
+        command.CommandText = query;
+
+        connection.Open();
+        SqlDataReader reader = command.ExecuteReader();
+        while (reader.Read())
+        {
+          user.Id = (int)reader["UserId"];
+          user.FirstName = (string)reader["FirstName"];
+          user.LastName = (string)reader["LastName"];
+          user.Email = (string)reader["Email"];
+          user.Address = (string)reader["Address"];
+          user.Mobile = (string)reader["Mobile"];
+          user.Password = (string)reader["Password"];
+          user.CreatedAt = (string)reader["CreatedAt"];
+          user.ModifiedAt = (string)reader["ModifiedAt"];
+        }
+      }
+      return user;
+    }
+
+    public void InsertReview(Review review)
+    {
+      using SqlConnection connection = new(dbconnection);
+      SqlCommand command = new()
+      {
+        Connection = connection
+      };
+
+      string query = "INSERT INTO Reviews (UserId, ProductId, Review, CreatedAt) VALUES (@uid, @pid, @rv, @cat);";
+      command.CommandText = query;
+      command.Parameters.Add("@uid", System.Data.SqlDbType.Int).Value = review.User.Id;
+      command.Parameters.Add("@pid", System.Data.SqlDbType.Int).Value = review.Product.Id;
+      command.Parameters.Add("@rv", System.Data.SqlDbType.NVarChar).Value = review.Value;
+      command.Parameters.Add("@cat", System.Data.SqlDbType.NVarChar).Value = review.CreatedAt;
+
+      connection.Open();
+      command.ExecuteNonQuery();
     }
 
     public bool InsertUser(User user)

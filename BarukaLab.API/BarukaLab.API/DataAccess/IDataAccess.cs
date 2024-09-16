@@ -12,5 +12,8 @@ namespace BarukaLab.API.DataAccess
     Product GetProduct(int id);
     bool InsertUser(User user);
     string IsUserPresent(string email, string password);
+    void InsertReview(Review review);
+    List<Review> GetProductReviews(int productId);
+    User GetUser(int id);
   }
 }

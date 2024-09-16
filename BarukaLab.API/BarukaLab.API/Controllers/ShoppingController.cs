@@ -59,5 +59,20 @@ namespace BarukaLab.API.Controllers
       if (token == "") token = "invalid";
       return Ok(token);
     }
+
+    [HttpPost("InsertReview")]
+    public IActionResult InsertReview([FromBody] Review review)
+    {
+      review.CreatedAt = DateTime.Now.ToString(DateFormat);
+      dataAccess.InsertReview(review);
+      return Ok("inserted");
+    }
+
+    [HttpGet("GetProductReviews/{productId}")]
+    public IActionResult GetProductReviews(int productId)
+    {
+      var result = dataAccess.GetProductReviews(productId);
+      return Ok(result);
+    }
   }
 }

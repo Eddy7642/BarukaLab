@@ -43,4 +43,12 @@ export interface Product {
   imageName: string;
 }
 
+export interface Review {
+  id: number;
+  user: User;
+  product: Product;
+  value: string;
+  createdAt: string;
+}
+
 // endregion Product

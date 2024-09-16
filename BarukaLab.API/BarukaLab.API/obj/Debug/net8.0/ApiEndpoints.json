@@ -27,6 +27,22 @@
   },
   {
     "ContainingType": "BarukaLab.API.Controllers.ShoppingController",
+    "Method": "GetProductReviews",
+    "RelativePath": "api/Shopping/GetProductReviews/{productId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "productId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BarukaLab.API.Controllers.ShoppingController",
     "Method": "GetProducts",
     "RelativePath": "api/Shopping/GetProducts",
     "HttpMethod": "GET",
@@ -47,6 +63,22 @@
         "Name": "count",
         "Type": "System.Int32",
         "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BarukaLab.API.Controllers.ShoppingController",
+    "Method": "InsertReview",
+    "RelativePath": "api/Shopping/InsertReview",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "review",
+        "Type": "BarukaLab.API.Models.Review",
+        "IsRequired": true
       }
     ],
     "ReturnTypes": []
