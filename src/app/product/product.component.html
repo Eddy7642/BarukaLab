@@ -26,11 +26,11 @@
       <h5 class="card-title text-success">
         {{
           utilityService.applyDiscount(product.price, product.offer.discount)
-        }}
+        }}€
         <span class="text-primary"> -{{ product.offer.discount }}% </span>
       </h5>
       <h6 class="card-subtitle text-danger text-decoration-line-through">
-        {{ product.price }}
+        {{ product.price }}€
       </h6>
       <div class="card-footer d-grid gap-2">
         <button class="btn btn-outline-success" type="button">
@@ -62,13 +62,26 @@
         <div class="card-header text-center">Header</div>
 
         <div class="card-body">
+          <h5 class="card-title title">{{ product.title }}</h5>
+          <p class="card-text description">{{ product.description }}</p>
+          <h6 class="card-subtitle mb-3 text-primary">
+            {{ product.quantity }} products are available.
+          </h6>
+        </div>
+
+        <div class="card-body">
           <h4 class="card-title text-muted">Pricing</h4>
           <h2 class="card-title text-success">
-            Final Price
+            {{
+              utilityService.applyDiscount(
+                product.price,
+                product.offer.discount
+              )
+            }}€
             <span class="text-primary">-{{ product.offer.discount }}%</span>
           </h2>
           <h5 class="card-subtitle text-danger text-decoration-line-through">
-            {{ product.price }}
+            {{ product.price }}€
           </h5>
         </div>
 

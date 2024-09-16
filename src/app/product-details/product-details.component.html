@@ -4,9 +4,11 @@
     <div class="col-4">
       <div class="d-flex justify-content-center align-items-center">
         <img
-          src="../../assets/Images/Scarpe/1/{{ imageIndex }}.jpeg"
+          src="../../assets/Images/{{ product.productCategory.subCategory }}/{{
+            product.id
+          }}/{{ imageIndex }}.jpg"
           alt="scarpa"
-          class="w-100"
+          class="immagine m-3"
         />
       </div>
 
@@ -14,27 +16,37 @@
         class="image-thumbnails m-4 d-flex justify-content-between align-items-center"
       >
         <img
-          src="../../assets/Images/Scarpe/1/1.jpeg"
+          src="../../assets/Images/{{ product.productCategory.subCategory }}/{{
+            product.id
+          }}/1.jpg"
           alt="Thumbnail Image"
           (click)="imageIndex = 1"
         />
         <img
-          src="../../assets/Images/Scarpe/1/2.jpeg"
+          src="../../assets/Images/{{ product.productCategory.subCategory }}/{{
+            product.id
+          }}/2.jpg"
           alt="Thumbnail Image"
           (click)="imageIndex = 2"
         />
         <img
-          src="../../assets/Images/Scarpe/1/3.jpeg"
+          src="../../assets/Images/{{ product.productCategory.subCategory }}/{{
+            product.id
+          }}/3.jpg"
           alt="Thumbnail Image"
           (click)="imageIndex = 3"
         />
         <img
-          src="../../assets/Images/Scarpe/1/4.jpeg"
+          src="../../assets/Images/{{ product.productCategory.subCategory }}/{{
+            product.id
+          }}/4.jpg"
           alt="Thumbnail Image"
           (click)="imageIndex = 4"
         />
         <img
-          src="../../assets/Images/Scarpe/1/5.jpeg"
+          src="../../assets/Images/{{ product.productCategory.subCategory }}/{{
+            product.id
+          }}/5.jpg"
           alt="Thumbnail Image"
           (click)="imageIndex = 5"
         />
@@ -44,21 +56,26 @@
     <!-------------Details of Product---------------->
     <div class="col-8">
       <div class="card-header">
-        <h2>Header</h2>
+        <h2>{{ product.title | titlecase }}</h2>
       </div>
+
       <div class="card-body">
         <h1 class="card-title text-success">
-          Final Price
-          <span class="text-primary">-20%</span>
+          {{
+            utilityService.applyDiscount(product.price, product.offer.discount)
+          }}€
+          <span class="text-primary">-{{ product.offer.discount }}%</span>
         </h1>
         <h4 class="card-subtitle text-danger text-decoration-line-through">
-          Original Price
+          {{ product.price }}€
         </h4>
       </div>
+
       <div class="card-body">
         <h6 class="card-subtitle my-2 text-primary">
-          11 product are available
+          {{ product.quantity }} product are available
         </h6>
+
         <div class="d-grid gap-2">
           <button type="button" class="btn btn-outline-success">
             Add to Cart
@@ -70,7 +87,7 @@
         <ul class="list-group">
           <li
             class="list-group-item list-group-item-action"
-            *ngFor="let item of [1, 1, 1, 1]"
+            *ngFor="let item of product.description.split('. ')"
           >
             {{ item }}
           </li>
@@ -87,7 +104,9 @@
         Related Product
       </h3>
       <div class="col-12">
-        <app-suggested-products></app-suggested-products>
+        <app-suggested-products
+          [category]="product.productCategory"
+        ></app-suggested-products>
       </div>
     </div>
   </div>
@@ -97,15 +116,21 @@
     <div class="col p-3">
       <h3>Give Your Review</h3>
       <h5 class="mt-4">Write Your Review</h5>
-      <textarea class="w-75 p-2"></textarea>
+      <textarea class="w-75 p-2" [formControl]="reviewControl"></textarea>
       <div class="d-flex align-items-start">
-        <button class="btn btn-outline-secondary mt-4 me-5" type="button">
+        <button
+          class="btn btn-outline-secondary mt-4 me-5"
+          type="button"
+          (click)="submitReview()"
+        >
           Save Review
         </button>
         <div>
           <h6 class="text-danger mt-4">Login first, then enter the review.</h6>
-          <h6 class="text-danger">Review Cannot Be Empty!</h6>
-          <h6 class="text-success">Review Saved Succesfully!</h6>
+          <h6 class="text-danger" *ngIf="showError">Review Cannot Be Empty!</h6>
+          <h6 class="text-success" *ngIf="reviewSaved">
+            Review Saved Succesfully!
+          </h6>
         </div>
       </div>
     </div>

@@ -30,5 +30,11 @@ namespace BarukaLab.API.Controllers
       return Ok(result);
     }
 
+    [HttpGet("GetProduct/{id}")]
+    public IActionResult GetProduct(int id)
+    {
+      var result = dataAccess.GetProduct(id);
+      return Ok(result);
+    }
   }
 }

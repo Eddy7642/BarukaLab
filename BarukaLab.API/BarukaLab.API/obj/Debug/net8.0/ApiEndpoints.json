@@ -11,6 +11,22 @@
   },
   {
     "ContainingType": "BarukaLab.API.Controllers.ShoppingController",
+    "Method": "GetProduct",
+    "RelativePath": "api/Shopping/GetProduct/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BarukaLab.API.Controllers.ShoppingController",
     "Method": "GetProducts",
     "RelativePath": "api/Shopping/GetProducts",
     "HttpMethod": "GET",
