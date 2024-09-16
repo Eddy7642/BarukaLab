@@ -20,6 +20,7 @@ import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
+import { JwtModule } from '@auth0/angular-jwt';
 
 
 
@@ -55,7 +56,7 @@ import { RouterModule } from '@angular/router';
         tokenGetter: () => {
           return localStorage.getItem('user');
         },
-        allowedDomains: ['localhost:7149'],
+        allowedDomains: ['localhost:7136'],
       },
     }),
   ],
