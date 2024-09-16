@@ -35,4 +35,10 @@ export class NavigationService {
         .set('count', count),
     });
   }
+
+  getProduct(id: number) {
+    let url = this.baseurl + 'GetProduct/' + id;
+    return this.http.get(url);
+  }
+
 }
