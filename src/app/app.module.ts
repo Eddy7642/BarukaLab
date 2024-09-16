@@ -49,8 +49,15 @@ import { RouterModule } from '@angular/router';
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    RouterModule
-
+    RouterModule,
+    JwtModule.forRoot({
+      config: {
+        tokenGetter: () => {
+          return localStorage.getItem('user');
+        },
+        allowedDomains: ['localhost:7149'],
+      },
+    }),
   ],
   providers: [provideHttpClient(withInterceptorsFromDi()),],
   bootstrap: [AppComponent]
