@@ -16,6 +16,12 @@ namespace BarukaLab.API.DataAccess
     List<Review> GetProductReviews(int productId);
     User GetUser(int id);
     bool InsertCartItem(int userId, int productId);
+    Cart GetActiveCartOfUser(int userid);
+    Cart GetCart(int cartid);
+    List<Cart> GetAllPreviousCartsOfUser(int userid);
+    List<PaymentMethod> GetPaymentMethods();
+    int InsertPayment(Payment payment);
+    int InsertOrder(Order order);
 
   }
 }

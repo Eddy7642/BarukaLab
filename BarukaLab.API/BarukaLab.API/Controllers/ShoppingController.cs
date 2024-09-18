@@ -81,5 +81,42 @@ namespace BarukaLab.API.Controllers
       var result = dataAccess.InsertCartItem(userid, productid);
       return Ok(result ? "inserted" : "not inserted");
     }
+
+    [HttpGet("GetActiveCartOfUser/{id}")]
+    public IActionResult GetActiveCartOfUser(int id)
+    {
+      var result = dataAccess.GetActiveCartOfUser(id);
+      return Ok(result);
+    }
+
+    [HttpGet("GetAllPreviousCartsOfUser/{id}")]
+    public IActionResult GetAllPreviousCartsOfUser(int id)
+    {
+      var result = dataAccess.GetAllPreviousCartsOfUser(id);
+      return Ok(result);
+    }
+
+    [HttpGet("GetPaymentMethods")]
+    public IActionResult GetPaymentMethods()
+    {
+      var result = dataAccess.GetPaymentMethods();
+      return Ok(result);
+    }
+
+    [HttpPost("InsertPayment")]
+    public IActionResult InsertPayment(Payment payment)
+    {
+      payment.CreatedAt = DateTime.Now.ToString();
+      var id = dataAccess.InsertPayment(payment);
+      return Ok(id.ToString());
+    }
+
+    [HttpPost("InsertOrder")]
+    public IActionResult InsertOrder(Order order)
+    {
+      order.CreatedAt = DateTime.Now.ToString();
+      var id = dataAccess.InsertOrder(order);
+      return Ok(id.ToString());
+    }
   }
 }

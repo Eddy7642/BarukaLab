@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { JwtHelperService } from '@auth0/angular-jwt';
-import { Product, User } from '../models/models';
+import { Cart, Payment, Product, User } from '../models/models';
 import { Subject } from 'rxjs';
 import { NavigationService } from './navigation.service';
 
@@ -8,6 +8,7 @@ import { NavigationService } from './navigation.service';
   providedIn: 'root'
 })
 export class UtilityService {
+
   changeCart = new Subject();
 
   constructor(
@@ -56,5 +57,47 @@ export class UtilityService {
     this.navigationService.addToCart(userid, productid).subscribe((res) => {
       if (res.toString() === 'inserted') this.changeCart.next(1);
     });
+  }
+
+  calculatePayment(cart: Cart, payment: Payment) {
+    payment.totalAmount = 0;
+    payment.amountPaid = 0;
+    payment.amountReduced = 0;
+
+    for (let cartitem of cart.cartItems) {
+      payment.totalAmount += cartitem.product.price;
+
+      payment.amountReduced +=
+        cartitem.product.price -
+        this.applyDiscount(
+          cartitem.product.price,
+          cartitem.product.offer.discount
+        );
+
+      payment.amountPaid += this.applyDiscount(
+        cartitem.product.price,
+        cartitem.product.offer.discount
+      );
+    }
+
+    if (payment.amountPaid > 500) payment.shipingCharges = 20;
+    else if (payment.amountPaid > 200) payment.shipingCharges = 10;
+    else if (payment.amountPaid > 50) payment.shipingCharges = 5;
+    else payment.shipingCharges = 2;
+  }
+
+  calculatePricePaid(cart: Cart) {
+    let pricepaid = 0;
+    for (let cartitem of cart.cartItems) {
+      pricepaid += this.applyDiscount(
+        cartitem.product.price,
+        cartitem.product.offer.discount
+      );
+    }
+    return pricepaid;
+  }
+
+  orderTheCart() {
+
   }
 }

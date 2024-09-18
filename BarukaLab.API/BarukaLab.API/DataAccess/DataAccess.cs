@@ -20,6 +20,116 @@ namespace BarukaLab.API.DataAccess
       dateformat = this.configuration["Constants:DateFormat"];
     }
 
+    public Cart GetActiveCartOfUser(int userid)
+    {
+      var cart = new Cart();
+      using (SqlConnection connection = new(dbconnection))
+      {
+        SqlCommand command = new()
+        {
+          Connection = connection
+        };
+        connection.Open();
+
+        string query = "SELECT COUNT(*) From Carts WHERE UserId=" + userid + " AND Ordered='false';";
+        command.CommandText = query;
+
+        int count = (int)command.ExecuteScalar();
+        if (count == 0)
+        {
+          return cart;
+        }
+
+        query = "SELECT CartId From Carts WHERE UserId=" + userid + " AND Ordered='false';";
+        command.CommandText = query;
+
+        int cartid = (int)command.ExecuteScalar();
+
+        query = "select * from CartItems where CartId=" + cartid + ";";
+        command.CommandText = query;
+
+        SqlDataReader reader = command.ExecuteReader();
+        while (reader.Read())
+        {
+          CartItem item = new()
+          {
+            Id = (int)reader["CartItemId"],
+            Product = GetProduct((int)reader["ProductId"])
+          };
+          cart.CartItems.Add(item);
+        }
+
+        cart.Id = cartid;
+        cart.User = GetUser(userid);
+        cart.Ordered = false;
+        cart.OrderedOn = "";
+      }
+      return cart;
+    }
+
+    public List<Cart> GetAllPreviousCartsOfUser(int userid)
+    {
+      var carts = new List<Cart>();
+      using (SqlConnection connection = new(dbconnection))
+      {
+        SqlCommand command = new()
+        {
+          Connection = connection
+        };
+        string query = "SELECT CartId FROM Carts WHERE UserId=" + userid + " AND Ordered='true';";
+        command.CommandText = query;
+        connection.Open();
+        SqlDataReader reader = command.ExecuteReader();
+        while (reader.Read())
+        {
+          var cartid = (int)reader["CartId"];
+          carts.Add(GetCart(cartid));
+        }
+      }
+      return carts;
+    }
+
+    public Cart GetCart(int cartid)
+    {
+      var cart = new Cart();
+      using (SqlConnection connection = new(dbconnection))
+      {
+        SqlCommand command = new()
+        {
+          Connection = connection
+        };
+        connection.Open();
+
+        string query = "SELECT * FROM CartItems WHERE CartId=" + cartid + ";";
+        command.CommandText = query;
+
+        SqlDataReader reader = command.ExecuteReader();
+        while (reader.Read())
+        {
+          CartItem item = new()
+          {
+            Id = (int)reader["CartItemId"],
+            Product = GetProduct((int)reader["ProductId"])
+          };
+          cart.CartItems.Add(item);
+        }
+        reader.Close();
+
+        query = "SELECT * FROM Carts WHERE CartId=" + cartid + ";";
+        command.CommandText = query;
+        reader = command.ExecuteReader();
+        while (reader.Read())
+        {
+          cart.Id = cartid;
+          cart.User = GetUser((int)reader["UserId"]);
+          cart.Ordered = bool.Parse((string)reader["Ordered"]);
+          cart.OrderedOn = (string)reader["OrderedOn"];
+        }
+        reader.Close();
+      }
+      return cart;
+    }
+
     public Offer GetOffer(int id)
     {
       var offer = new Offer();
@@ -46,6 +156,39 @@ namespace BarukaLab.API.DataAccess
       }
         return offer;
     }
+
+    public List<PaymentMethod> GetPaymentMethods()
+    {
+      var result = new List<PaymentMethod>();
+      using (SqlConnection connection = new(dbconnection))
+      {
+        SqlCommand command = new()
+        {
+          Connection = connection
+        };
+
+        string query = "SELECT * FROM PaymentMethods;";
+        command.CommandText = query;
+
+        connection.Open();
+
+        SqlDataReader reader = command.ExecuteReader();
+        while (reader.Read())
+        {
+          PaymentMethod paymentMethod = new()
+          {
+            Id = (int)reader["PaymentMethodId"],
+            Type = (string)reader["Type"],
+            Provider = (string)reader["Provider"],
+            Available = bool.Parse((string)reader["Available"]),
+            Reason = (string)reader["Reason"]
+          };
+          result.Add(paymentMethod);
+        }
+      }
+      return result;
+    }
+
     public Product GetProduct(int id)
     {
       var product = new Product();
@@ -79,6 +222,7 @@ namespace BarukaLab.API.DataAccess
       }
       return product;
     }
+
     public List<ProductCategory> GetProductCategories()
     {
       var productCategories = new List<ProductCategory>();
@@ -210,6 +354,7 @@ namespace BarukaLab.API.DataAccess
       }
       return products;
     }
+
     public User GetUser(int id)
     {
       var user = new User();
@@ -271,6 +416,86 @@ namespace BarukaLab.API.DataAccess
         command.ExecuteNonQuery();
         return true;
       }
+    }
+
+    public int InsertOrder(Order order)
+    {
+      int value = 0;
+
+      using (SqlConnection connection = new(dbconnection))
+      {
+        SqlCommand command = new()
+        {
+          Connection = connection
+        };
+
+        string query = "INSERT INTO Orders (UserId, CartId, PaymentId, CreatedAt) values (@uid, @cid, @pid, @cat);";
+
+        command.CommandText = query;
+        command.Parameters.Add("@uid", System.Data.SqlDbType.Int).Value = order.User.Id;
+        command.Parameters.Add("@cid", System.Data.SqlDbType.Int).Value = order.Cart.Id;
+        command.Parameters.Add("@cat", System.Data.SqlDbType.NVarChar).Value = order.CreatedAt;
+        command.Parameters.Add("@pid", System.Data.SqlDbType.Int).Value = order.Payment.Id;
+
+        connection.Open();
+        value = command.ExecuteNonQuery();
+
+        if (value > 0)
+        {
+          query = "UPDATE Carts SET Ordered='true', OrderedOn='" + DateTime.Now.ToString(dateformat) + "' WHERE CartId=" + order.Cart.Id + ";";
+          command.CommandText = query;
+          command.ExecuteNonQuery();
+
+          query = "SELECT TOP 1 Id FROM Orders ORDER BY Id DESC;";
+          command.CommandText = query;
+          value = (int)command.ExecuteScalar();
+        }
+        else
+        {
+          value = 0;
+        }
+      }
+
+      return value;
+    }
+
+    public int InsertPayment(Payment payment)
+    {
+      int value = 0;
+      using (SqlConnection connection = new(dbconnection))
+      {
+        SqlCommand command = new()
+        {
+          Connection = connection
+        };
+
+        string query = @"INSERT INTO Payments (PaymentMethodId, UserId, TotalAmount, ShippingCharges, AmountReduced, AmountPaid, CreatedAt) 
+                                VALUES (@pmid, @uid, @ta, @sc, @ar, @ap, @cat);";
+
+        command.CommandText = query;
+        command.Parameters.Add("@pmid", System.Data.SqlDbType.Int).Value = payment.PaymentMethod.Id;
+        command.Parameters.Add("@uid", System.Data.SqlDbType.Int).Value = payment.User.Id;
+        command.Parameters.Add("@ta", System.Data.SqlDbType.NVarChar).Value = payment.TotalAmount;
+        command.Parameters.Add("@sc", System.Data.SqlDbType.NVarChar).Value = payment.ShipingCharges;
+        command.Parameters.Add("@ar", System.Data.SqlDbType.NVarChar).Value = payment.AmountReduced;
+        command.Parameters.Add("@ap", System.Data.SqlDbType.NVarChar).Value = payment.AmountPaid;
+        command.Parameters.Add("@cat", System.Data.SqlDbType.NVarChar).Value = payment.CreatedAt;
+
+        connection.Open();
+        value = command.ExecuteNonQuery();
+
+        if (value > 0)
+        {
+          query = "SELECT TOP 1 Id FROM Payments ORDER BY Id DESC;";
+          command.CommandText = query;
+          value = (int)command.ExecuteScalar();
+        }
+        else
+        {
+          value = 0;
+        }
+      }
+      return value;
     }
 
     public void InsertReview(Review review)

@@ -1,8 +1,50 @@
 [
   {
     "ContainingType": "BarukaLab.API.Controllers.ShoppingController",
+    "Method": "GetActiveCartOfUser",
+    "RelativePath": "api/Shopping/GetActiveCartOfUser/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BarukaLab.API.Controllers.ShoppingController",
+    "Method": "GetAllPreviousCartsOfUser",
+    "RelativePath": "api/Shopping/GetAllPreviousCartsOfUser/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BarukaLab.API.Controllers.ShoppingController",
     "Method": "GetCategoryList",
     "RelativePath": "api/Shopping/GetCategoryList",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BarukaLab.API.Controllers.ShoppingController",
+    "Method": "GetPaymentMethods",
+    "RelativePath": "api/Shopping/GetPaymentMethods",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -83,6 +125,38 @@
       {
         "Name": "productid",
         "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BarukaLab.API.Controllers.ShoppingController",
+    "Method": "InsertOrder",
+    "RelativePath": "api/Shopping/InsertOrder",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "order",
+        "Type": "BarukaLab.API.Models.Order",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BarukaLab.API.Controllers.ShoppingController",
+    "Method": "InsertPayment",
+    "RelativePath": "api/Shopping/InsertPayment",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "payment",
+        "Type": "BarukaLab.API.Models.Payment",
         "IsRequired": true
       }
     ],

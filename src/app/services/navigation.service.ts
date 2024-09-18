@@ -1,12 +1,13 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { map } from 'rxjs';
-import { Category, User } from '../models/models';
+import { Category, Payment, Order, PaymentMethod, User } from '../models/models';
 
 @Injectable({
   providedIn: 'root'
 })
 export class NavigationService {
+
   baseurl = "https://localhost:7136/api/Shopping/";
 
   constructor(private http: HttpClient) {}
@@ -79,5 +80,30 @@ export class NavigationService {
   addToCart(userid: number, productid: number) {
     let url = this.baseurl + 'InsertCartItem/' + userid + '/' + productid;
     return this.http.post(url, null, { responseType: 'text' });
+  }
+
+  getActiveCartOfUser(userid: number) {
+    let url = this.baseurl + 'GetActiveCartOfUser/' + userid;
+    return this.http.get(url);
+  }
+
+  getAllPreviousCarts(userid: number) {
+    let url = this.baseurl + 'GetAllPreviousCartsOfUser/' + userid;
+    return this.http.get(url);
+  }
+
+  getPaymentMethods() {
+    let url = this.baseurl + 'GetPaymentMethods';
+    return this.http.get<PaymentMethod[]>(url);
+  }
+
+  insertPayment(payment: Payment) {
+    return this.http.post(this.baseurl + 'InsertPayment', payment, {
+      responseType: 'text',
+    });
+  }
+
+  insertOrder(order: Order) {
+    return this.http.post(this.baseurl + 'InsertOrder', order);
   }
 }

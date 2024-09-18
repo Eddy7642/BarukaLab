@@ -3,20 +3,28 @@
   "WorkspaceRootPath": "C:\\Users\\lucac\\OneDrive\\Desktop\\baruka\\BarukaLab.API\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{2D0552AD-EB90-45AB-A48D-1A3D1CF80995}|BarukaLab.API\\BarukaLab.API.csproj|c:\\users\\lucac\\onedrive\\desktop\\baruka\\barukalab.api\\barukalab.api\\controllers\\shoppingcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2D0552AD-EB90-45AB-A48D-1A3D1CF80995}|BarukaLab.API\\BarukaLab.API.csproj|solutionrelative:barukalab.api\\controllers\\shoppingcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2D0552AD-EB90-45AB-A48D-1A3D1CF80995}|BarukaLab.API\\BarukaLab.API.csproj|c:\\users\\lucac\\onedrive\\desktop\\baruka\\barukalab.api\\barukalab.api\\models\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2D0552AD-EB90-45AB-A48D-1A3D1CF80995}|BarukaLab.API\\BarukaLab.API.csproj|solutionrelative:barukalab.api\\models\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2D0552AD-EB90-45AB-A48D-1A3D1CF80995}|BarukaLab.API\\BarukaLab.API.csproj|c:\\users\\lucac\\onedrive\\desktop\\baruka\\barukalab.api\\barukalab.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2D0552AD-EB90-45AB-A48D-1A3D1CF80995}|BarukaLab.API\\BarukaLab.API.csproj|solutionrelative:barukalab.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2D0552AD-EB90-45AB-A48D-1A3D1CF80995}|BarukaLab.API\\BarukaLab.API.csproj|c:\\users\\lucac\\onedrive\\desktop\\baruka\\barukalab.api\\barukalab.api\\models\\payment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2D0552AD-EB90-45AB-A48D-1A3D1CF80995}|BarukaLab.API\\BarukaLab.API.csproj|solutionrelative:barukalab.api\\models\\payment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2D0552AD-EB90-45AB-A48D-1A3D1CF80995}|BarukaLab.API\\BarukaLab.API.csproj|c:\\users\\lucac\\onedrive\\desktop\\baruka\\barukalab.api\\barukalab.api\\dataaccess\\dataaccess.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2D0552AD-EB90-45AB-A48D-1A3D1CF80995}|BarukaLab.API\\BarukaLab.API.csproj|solutionrelative:barukalab.api\\dataaccess\\dataaccess.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2D0552AD-EB90-45AB-A48D-1A3D1CF80995}|BarukaLab.API\\BarukaLab.API.csproj|c:\\users\\lucac\\onedrive\\desktop\\baruka\\barukalab.api\\barukalab.api\\models\\paymentmethod.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2D0552AD-EB90-45AB-A48D-1A3D1CF80995}|BarukaLab.API\\BarukaLab.API.csproj|solutionrelative:barukalab.api\\models\\paymentmethod.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{2D0552AD-EB90-45AB-A48D-1A3D1CF80995}|BarukaLab.API\\BarukaLab.API.csproj|c:\\users\\lucac\\onedrive\\desktop\\baruka\\barukalab.api\\barukalab.api\\dataaccess\\idataaccess.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2D0552AD-EB90-45AB-A48D-1A3D1CF80995}|BarukaLab.API\\BarukaLab.API.csproj|solutionrelative:barukalab.api\\dataaccess\\idataaccess.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2D0552AD-EB90-45AB-A48D-1A3D1CF80995}|BarukaLab.API\\BarukaLab.API.csproj|c:\\users\\lucac\\onedrive\\desktop\\baruka\\barukalab.api\\barukalab.api\\controllers\\shoppingcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2D0552AD-EB90-45AB-A48D-1A3D1CF80995}|BarukaLab.API\\BarukaLab.API.csproj|solutionrelative:barukalab.api\\controllers\\shoppingcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2D0552AD-EB90-45AB-A48D-1A3D1CF80995}|BarukaLab.API\\BarukaLab.API.csproj|c:\\users\\lucac\\onedrive\\desktop\\baruka\\barukalab.api\\barukalab.api\\dataaccess\\dataaccess.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2D0552AD-EB90-45AB-A48D-1A3D1CF80995}|BarukaLab.API\\BarukaLab.API.csproj|solutionrelative:barukalab.api\\dataaccess\\dataaccess.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,8 +34,86 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 0,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Order.cs",
+              "DocumentMoniker": "C:\\Users\\lucac\\OneDrive\\Desktop\\baruka\\BarukaLab.API\\BarukaLab.API\\Models\\Order.cs",
+              "RelativeDocumentMoniker": "BarukaLab.API\\Models\\Order.cs",
+              "ToolTip": "C:\\Users\\lucac\\OneDrive\\Desktop\\baruka\\BarukaLab.API\\BarukaLab.API\\Models\\Order.cs",
+              "RelativeToolTip": "BarukaLab.API\\Models\\Order.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAA5AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-18T22:28:10.491Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Payment.cs",
+              "DocumentMoniker": "C:\\Users\\lucac\\OneDrive\\Desktop\\baruka\\BarukaLab.API\\BarukaLab.API\\Models\\Payment.cs",
+              "RelativeDocumentMoniker": "BarukaLab.API\\Models\\Payment.cs",
+              "ToolTip": "C:\\Users\\lucac\\OneDrive\\Desktop\\baruka\\BarukaLab.API\\BarukaLab.API\\Models\\Payment.cs",
+              "RelativeToolTip": "BarukaLab.API\\Models\\Payment.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAA5AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-18T22:27:36.389Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "PaymentMethod.cs",
+              "DocumentMoniker": "C:\\Users\\lucac\\OneDrive\\Desktop\\baruka\\BarukaLab.API\\BarukaLab.API\\Models\\PaymentMethod.cs",
+              "RelativeDocumentMoniker": "BarukaLab.API\\Models\\PaymentMethod.cs",
+              "ToolTip": "C:\\Users\\lucac\\OneDrive\\Desktop\\baruka\\BarukaLab.API\\BarukaLab.API\\Models\\PaymentMethod.cs",
+              "RelativeToolTip": "BarukaLab.API\\Models\\PaymentMethod.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAA2AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-18T21:36:09.221Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "IDataAccess.cs",
+              "DocumentMoniker": "C:\\Users\\lucac\\OneDrive\\Desktop\\baruka\\BarukaLab.API\\BarukaLab.API\\DataAccess\\IDataAccess.cs",
+              "RelativeDocumentMoniker": "BarukaLab.API\\DataAccess\\IDataAccess.cs",
+              "ToolTip": "C:\\Users\\lucac\\OneDrive\\Desktop\\baruka\\BarukaLab.API\\BarukaLab.API\\DataAccess\\IDataAccess.cs",
+              "RelativeToolTip": "BarukaLab.API\\DataAccess\\IDataAccess.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-18T20:54:03.348Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ShoppingController.cs",
+              "DocumentMoniker": "C:\\Users\\lucac\\OneDrive\\Desktop\\baruka\\BarukaLab.API\\BarukaLab.API\\Controllers\\ShoppingController.cs",
+              "RelativeDocumentMoniker": "BarukaLab.API\\Controllers\\ShoppingController.cs",
+              "ToolTip": "C:\\Users\\lucac\\OneDrive\\Desktop\\baruka\\BarukaLab.API\\BarukaLab.API\\Controllers\\ShoppingController.cs",
+              "RelativeToolTip": "BarukaLab.API\\Controllers\\ShoppingController.cs",
+              "ViewState": "AgIAABoAAAAAAAAAAAAowG4AAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-18T20:54:20.343Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "DataAccess.cs",
+              "DocumentMoniker": "C:\\Users\\lucac\\OneDrive\\Desktop\\baruka\\BarukaLab.API\\BarukaLab.API\\DataAccess\\DataAccess.cs",
+              "RelativeDocumentMoniker": "BarukaLab.API\\DataAccess\\DataAccess.cs",
+              "ToolTip": "C:\\Users\\lucac\\OneDrive\\Desktop\\baruka\\BarukaLab.API\\BarukaLab.API\\DataAccess\\DataAccess.cs",
+              "RelativeToolTip": "BarukaLab.API\\DataAccess\\DataAccess.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAADwv2QBAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-18T20:51:47.244Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:129:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
@@ -39,61 +125,6 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\lucac\\OneDrive\\Desktop\\baruka\\BarukaLab.API\\BarukaLab.API\\Program.cs",
-              "RelativeDocumentMoniker": "BarukaLab.API\\Program.cs",
-              "ToolTip": "C:\\Users\\lucac\\OneDrive\\Desktop\\baruka\\BarukaLab.API\\BarukaLab.API\\Program.cs",
-              "RelativeToolTip": "BarukaLab.API\\Program.cs",
-              "ViewState": "AgIAABgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-18T15:02:29.429Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "ShoppingController.cs",
-              "DocumentMoniker": "C:\\Users\\lucac\\OneDrive\\Desktop\\baruka\\BarukaLab.API\\BarukaLab.API\\Controllers\\ShoppingController.cs",
-              "RelativeDocumentMoniker": "BarukaLab.API\\Controllers\\ShoppingController.cs",
-              "ToolTip": "C:\\Users\\lucac\\OneDrive\\Desktop\\baruka\\BarukaLab.API\\BarukaLab.API\\Controllers\\ShoppingController.cs",
-              "RelativeToolTip": "BarukaLab.API\\Controllers\\ShoppingController.cs",
-              "ViewState": "AgIAAA0AAAAAAAAAAAA1wE0AAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-16T17:42:16.438Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "DataAccess.cs",
-              "DocumentMoniker": "C:\\Users\\lucac\\OneDrive\\Desktop\\baruka\\BarukaLab.API\\BarukaLab.API\\DataAccess\\DataAccess.cs",
-              "RelativeDocumentMoniker": "BarukaLab.API\\DataAccess\\DataAccess.cs",
-              "ToolTip": "C:\\Users\\lucac\\OneDrive\\Desktop\\baruka\\BarukaLab.API\\BarukaLab.API\\DataAccess\\DataAccess.cs",
-              "RelativeToolTip": "BarukaLab.API\\DataAccess\\DataAccess.cs",
-              "ViewState": "AgIAAD8BAAAAAAAAAAAswAoAAAAaAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-16T17:40:19.524Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "IDataAccess.cs",
-              "DocumentMoniker": "C:\\Users\\lucac\\OneDrive\\Desktop\\baruka\\BarukaLab.API\\BarukaLab.API\\DataAccess\\IDataAccess.cs",
-              "RelativeDocumentMoniker": "BarukaLab.API\\DataAccess\\IDataAccess.cs",
-              "ToolTip": "C:\\Users\\lucac\\OneDrive\\Desktop\\baruka\\BarukaLab.API\\BarukaLab.API\\DataAccess\\IDataAccess.cs",
-              "RelativeToolTip": "BarukaLab.API\\DataAccess\\IDataAccess.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAZAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-16T17:39:42.916Z"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
             }
           ]
         }
