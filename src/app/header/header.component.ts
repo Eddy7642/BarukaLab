@@ -17,18 +17,8 @@ export class HeaderComponent implements OnInit {
   container!: ViewContainerRef;
   cartItems: number = 0;
 
-  navigationList: NavigationItem[] = [
+  navigationList: NavigationItem[] = [];
 
-    {
-      category: 'abbigliamento',
-      subcategories: ['scarpe', 'giacche']
-    },
-    {
-      category: 'accessori',
-      subcategories: ['portachiavi', 'calzolaio']
-    }, // add more categories as needed
-  ];
-subCategory: any;
   constructor(private navigationService: NavigationService,
   public utilityService: UtilityService
   )
@@ -52,6 +42,10 @@ subCategory: any;
           });
         }
       }
+    });
+    this.utilityService.changeCart.subscribe((res: any) => {
+      if (parseInt(res) === 0) this.cartItems = 0;
+      else this.cartItems += parseInt(res);
     });
   }
 

@@ -15,5 +15,7 @@ namespace BarukaLab.API.DataAccess
     void InsertReview(Review review);
     List<Review> GetProductReviews(int productId);
     User GetUser(int id);
+    bool InsertCartItem(int userId, int productId);
+
   }
 }

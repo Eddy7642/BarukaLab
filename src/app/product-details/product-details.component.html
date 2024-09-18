@@ -77,8 +77,16 @@
         </h6>
 
         <div class="d-grid gap-2">
-          <button type="button" class="btn btn-outline-success">
+          <button
+            type="button"
+            class="btn btn-outline-success"
+            [disabled]="!utilityService.isLoggedIn()"
+            (click)="this.utilityService.addToCart(product)"
+          >
             Add to Cart
+            <span *ngif="!utilityService.isLoggedIn()"
+              >(Devi prima eseguire il Login)</span
+            >
           </button>
         </div>
       </div>

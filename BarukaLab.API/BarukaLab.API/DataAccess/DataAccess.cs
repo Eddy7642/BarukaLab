@@ -241,6 +241,38 @@ namespace BarukaLab.API.DataAccess
       return user;
     }
 
+    public bool InsertCartItem(int userId, int productId)
+    {
+      using (SqlConnection connection = new(dbconnection))
+      {
+        SqlCommand command = new()
+        {
+          Connection = connection
+        };
+
+        connection.Open();
+        string query = "SELECT COUNT(*) FROM Carts WHERE UserId=" + userId + " AND Ordered='false';";
+        command.CommandText = query;
+        int count = (int)command.ExecuteScalar();
+        if (count == 0)
+        {
+          query = "INSERT INTO Carts (UserId, Ordered, OrderedOn) VALUES (" + userId + ", 'false', '');";
+          command.CommandText = query;
+          command.ExecuteNonQuery();
+        }
+
+        query = "SELECT CartId FROM Carts WHERE UserId=" + userId + " AND Ordered='false';";
+        command.CommandText = query;
+        int cartId = (int)command.ExecuteScalar();
+
+
+        query = "INSERT INTO CartItems (CartId, ProductId) VALUES (" + cartId + ", " + productId + ");";
+        command.CommandText = query;
+        command.ExecuteNonQuery();
+        return true;
+      }
+    }
+
     public void InsertReview(Review review)
     {
       using SqlConnection connection = new(dbconnection);
@@ -333,7 +365,7 @@ namespace BarukaLab.API.DataAccess
           user.ModifiedAt = (string)reader["ModifiedAt"];
         }
 
-        string key = "MNU66iBl3T5rh6H52i69";
+        string key = "MNU66iBl3T5rh6H52i69MNU66iBl3T5rh6H5";
         string duration = "60";
         var symmetrickey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(key));
         var credentials = new SigningCredentials(symmetrickey, SecurityAlgorithms.HmacSha256);

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { User } from '../models/models';
+import { NavigationService } from '../services/navigation.service';
 
 @Component({
   selector: 'app-register',
@@ -10,9 +11,12 @@ import { User } from '../models/models';
 export class RegisterComponent implements OnInit {
   registerForm!: FormGroup;
   invaildRPWD: boolean = false;
-  navigationService: any;
-  message: any;
-  constructor( private fb: FormBuilder) { }
+  message = '';
+
+  constructor(
+    private fb: FormBuilder,
+    private navigationService: NavigationService
+  ) { }
 
 
   ngOnInit(): void {

@@ -1,13 +1,18 @@
 import { Injectable } from '@angular/core';
 import { JwtHelperService } from '@auth0/angular-jwt';
-import { User } from '../models/models';
+import { Product, User } from '../models/models';
+import { Subject } from 'rxjs';
+import { NavigationService } from './navigation.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UtilityService {
+  changeCart = new Subject();
 
-  constructor(private jwt: JwtHelperService) { }
+  constructor(
+    private navigationService: NavigationService,
+    private jwt: JwtHelperService) { }
 
   applyDiscount(price: number, discount: number): number {
     let finalPrice: number = price - price * (discount / 100);
@@ -42,5 +47,14 @@ export class UtilityService {
 
   logoutUser() {
     localStorage.removeItem('user');
+  }
+
+  addToCart(product: Product) {
+    let productid = product.id;
+    let userid = this.getUser().id;
+
+    this.navigationService.addToCart(userid, productid).subscribe((res) => {
+      if (res.toString() === 'inserted') this.changeCart.next(1);
+    });
   }
 }

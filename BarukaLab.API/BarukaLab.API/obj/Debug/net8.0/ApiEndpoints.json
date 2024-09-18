@@ -69,6 +69,27 @@
   },
   {
     "ContainingType": "BarukaLab.API.Controllers.ShoppingController",
+    "Method": "InsertCartItem",
+    "RelativePath": "api/Shopping/InsertCartItem/{userid}/{productid}",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userid",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "productid",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BarukaLab.API.Controllers.ShoppingController",
     "Method": "InsertReview",
     "RelativePath": "api/Shopping/InsertReview",
     "HttpMethod": "POST",

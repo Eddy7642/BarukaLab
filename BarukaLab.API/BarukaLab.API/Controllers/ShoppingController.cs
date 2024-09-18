@@ -74,5 +74,12 @@ namespace BarukaLab.API.Controllers
       var result = dataAccess.GetProductReviews(productId);
       return Ok(result);
     }
+
+    [HttpPost("InsertCartItem/{userid}/{productid}")]
+    public IActionResult InsertCartItem(int userid, int productid)
+    {
+      var result = dataAccess.InsertCartItem(userid, productid);
+      return Ok(result ? "inserted" : "not inserted");
+    }
   }
 }
