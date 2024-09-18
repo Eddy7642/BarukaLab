@@ -38,3 +38,11 @@ C:\Users\lucac\OneDrive\Desktop\baruka\BarukaLab.API\BarukaLab.API\obj\Debug\net
 C:\Users\lucac\OneDrive\Desktop\baruka\BarukaLab.API\BarukaLab.API\obj\Debug\net8.0\BarukaLab.API.pdb
 C:\Users\lucac\OneDrive\Desktop\baruka\BarukaLab.API\BarukaLab.API\obj\Debug\net8.0\BarukaLab.API.genruntimeconfig.cache
 C:\Users\lucac\OneDrive\Desktop\baruka\BarukaLab.API\BarukaLab.API\obj\Debug\net8.0\ref\BarukaLab.API.dll
+C:\Users\lucac\OneDrive\Desktop\baruka\BarukaLab.API\BarukaLab.API\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\lucac\OneDrive\Desktop\baruka\BarukaLab.API\BarukaLab.API\bin\Debug\net8.0\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\lucac\OneDrive\Desktop\baruka\BarukaLab.API\BarukaLab.API\bin\Debug\net8.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\lucac\OneDrive\Desktop\baruka\BarukaLab.API\BarukaLab.API\bin\Debug\net8.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\lucac\OneDrive\Desktop\baruka\BarukaLab.API\BarukaLab.API\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\lucac\OneDrive\Desktop\baruka\BarukaLab.API\BarukaLab.API\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\lucac\OneDrive\Desktop\baruka\BarukaLab.API\BarukaLab.API\bin\Debug\net8.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\lucac\OneDrive\Desktop\baruka\BarukaLab.API\BarukaLab.API\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll

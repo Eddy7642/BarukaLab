@@ -1,8 +1,50 @@
 [
   {
     "ContainingType": "BarukaLab.API.Controllers.ShoppingController",
+    "Method": "GetActiveCartOfUser",
+    "RelativePath": "api/Shopping/GetActiveCartOfUser/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BarukaLab.API.Controllers.ShoppingController",
+    "Method": "GetAllPreviousCartsOfUser",
+    "RelativePath": "api/Shopping/GetAllPreviousCartsOfUser/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BarukaLab.API.Controllers.ShoppingController",
     "Method": "GetCategoryList",
     "RelativePath": "api/Shopping/GetCategoryList",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BarukaLab.API.Controllers.ShoppingController",
+    "Method": "GetPaymentMethods",
+    "RelativePath": "api/Shopping/GetPaymentMethods",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -19,6 +61,22 @@
     "Parameters": [
       {
         "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BarukaLab.API.Controllers.ShoppingController",
+    "Method": "GetProductReviews",
+    "RelativePath": "api/Shopping/GetProductReviews/{productId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "productId",
         "Type": "System.Int32",
         "IsRequired": true
       }
@@ -47,6 +105,107 @@
         "Name": "count",
         "Type": "System.Int32",
         "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BarukaLab.API.Controllers.ShoppingController",
+    "Method": "InsertCartItem",
+    "RelativePath": "api/Shopping/InsertCartItem/{userid}/{productid}",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userid",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "productid",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BarukaLab.API.Controllers.ShoppingController",
+    "Method": "InsertOrder",
+    "RelativePath": "api/Shopping/InsertOrder",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "order",
+        "Type": "BarukaLab.API.Models.Order",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BarukaLab.API.Controllers.ShoppingController",
+    "Method": "InsertPayment",
+    "RelativePath": "api/Shopping/InsertPayment",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "payment",
+        "Type": "BarukaLab.API.Models.Payment",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BarukaLab.API.Controllers.ShoppingController",
+    "Method": "InsertReview",
+    "RelativePath": "api/Shopping/InsertReview",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "review",
+        "Type": "BarukaLab.API.Models.Review",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BarukaLab.API.Controllers.ShoppingController",
+    "Method": "LoginUser",
+    "RelativePath": "api/Shopping/LoginUser",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "user",
+        "Type": "BarukaLab.API.Models.User",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BarukaLab.API.Controllers.ShoppingController",
+    "Method": "RegisterUser",
+    "RelativePath": "api/Shopping/RegisterUser",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "user",
+        "Type": "BarukaLab.API.Models.User",
+        "IsRequired": true
       }
     ],
     "ReturnTypes": []

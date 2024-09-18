@@ -33,8 +33,16 @@
         {{ product.price }}€
       </h6>
       <div class="card-footer d-grid gap-2">
-        <button class="btn btn-outline-success" type="button">
+        <button
+          class="btn btn-outline-success"
+          type="button"
+          [disabled]="!utilityService.isLoggedIn()"
+          (click)="this.utilityService.addToCart(product)"
+        >
           Add to Cart
+          <span *ngIf="!utilityService.isLoggedIn()"
+            >(Devi prima effettuare il Login)</span
+          >
         </button>
       </div>
     </div>
@@ -86,8 +94,16 @@
         </div>
 
         <div class="card-footer text-muted d-grid gap-2">
-          <button class="btn btn-outline-success" type="button">
+          <button
+            class="btn btn-outline-success"
+            type="button"
+            [disabled]="!utilityService.isLoggedIn()"
+            (click)="this.utilityService.addToCart(product)"
+          >
             Add to Cart
+            <span *ngIf="!utilityService.isLoggedIn()"
+              >(Devi prima effettuare il Login)</span
+            >
           </button>
         </div>
       </div>
@@ -116,13 +132,16 @@
         <div class="card-body">
           <h5 class="card-title title">{{ product.title }}</h5>
           <h5 class="card-title text-success">
-            Final Price
-            <span class="text-primary">
-              {{ product.quantity }} product available</span
-            >
+            {{
+              utilityService.applyDiscount(
+                product.price,
+                product.offer.discount
+              )
+            }}€
+            <span class="text-primary"> -{{ product.offer.discount }}%</span>
           </h5>
           <h6 class="card-subtitle text-danger text-decoration-line-through">
-            Original Price
+            {{ product.price }}€
           </h6>
         </div>
         <div class="card-footer text-muted d-grid gap-2">
