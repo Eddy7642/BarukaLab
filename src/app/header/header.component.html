@@ -1,9 +1,9 @@
 <header
-  class="w-100 h-100 bg-dark px-4 my-shadow d-flex justify-content-between align-items-center"
+  class="w-100 h-100 bg-black px-4 my-shadow d-flex justify-content-between align-items-center"
 >
   <div class="text-light fs-2 fw-bold fst-italic">
     <img
-      src="../../assets/Images/Logo/Logo BarukaLab.jpg"
+      src="../../assets/Images/Logo/Logo Baruka.jpeg"
       alt="Logo BK"
       class="navbar-logo"
     />
@@ -22,7 +22,7 @@
         >
           Categorie
         </button>
-        <ul class="dropdown-menu fs-5">
+        <ul class="dropdown-menu fs-5 bg-black">
           <ng-container *ngFor="let item of navigationList; let i = index">
             <li class="text-center fw-bold">{{ item.category | titlecase }}</li>
             <li
@@ -30,7 +30,7 @@
               [style.cursor]="'pointer'"
             >
               <a
-                class="dropdown-item"
+                class="dropdown-item text-white"
                 OpenProducts
                 [category]="{
                   id: 0,
@@ -75,7 +75,7 @@
         class="btn btn-outline-light"
         *ngIf="utilityService.isLoggedIn()"
       >
-        Account
+        <i class="bi bi-person"></i>
       </button>
       <button
         type="button"
@@ -83,8 +83,8 @@
         routerLink="../cart"
         *ngIf="utilityService.isLoggedIn()"
       >
-        Carrello
-        <span class="badge bg-warning text-dark">{{ cartItems }}</span>
+        <i class="bi bi-cart"></i>
+        <span class="badge bg-info text-dark mx-2">{{ cartItems }}</span>
       </button>
       <button
         type="button"
