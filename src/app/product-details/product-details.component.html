@@ -1,4 +1,4 @@
-<div class="my-container mx-auto border border-dark">
+<div class="my-container mx-auto border border-white">
   <div class="row g-0">
     <!-------------Profile Image of Product-------->
     <div class="col-4">
@@ -107,13 +107,14 @@
   <div class="row g-0">
     <div class="col-12 ps-5 pt-4 pb-3">
       <h3
-        class="border border-secondary text-center py-2 my-rounded-corner w-25"
+        class="border border-secondary text-center py-2 my-3 my-rounded-corner w-25"
       >
         Prodotti suggeriti
       </h3>
       <div class="col-12">
         <app-suggested-products
           [category]="product.productCategory"
+          class="m-4"
         ></app-suggested-products>
       </div>
     </div>

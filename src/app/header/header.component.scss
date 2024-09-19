@@ -8,7 +8,17 @@
   z-index: 20;
 }
 
+.dropdown-item:hover {
+  background-color: #108ab9; /* Cambia lo sfondo durante l'hover */
+
+}
+
+
 .navbar-logo {
   width: 65px;
   height: auto;
+}
+
+hr {
+  background-color: white;
 }

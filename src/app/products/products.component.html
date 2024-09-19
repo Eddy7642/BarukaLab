@@ -3,7 +3,7 @@
     <div class="btn-group" role="group">
       <button
         type="button"
-        class="btn btn-outline-secondary"
+        class="btn btn-outline-info"
         [ngClass]="{ active: view === 'grid' }"
         (click)="view = 'grid'"
       >
@@ -11,7 +11,7 @@
       </button>
       <button
         type="button"
-        class="btn btn-outline-secondary"
+        class="btn btn-outline-info"
         [ngClass]="{ active: view === 'list' }"
         (click)="view = 'list'"
       >
@@ -26,7 +26,7 @@
       <div class="btn-group" role="group">
         <button
           type="button"
-          class="btn btn-outline-secondary"
+          class="btn btn-outline-info"
           [ngClass]="{ active: sortby === 'default' }"
           (click)="sortby = 'default'; sortByPrice(sortby)"
         >
@@ -34,7 +34,7 @@
         </button>
         <button
           type="button"
-          class="btn btn-outline-secondary"
+          class="btn btn-outline-info"
           [ngClass]="{ active: sortby === 'htl' }"
           (click)="sortby = 'htl'; sortByPrice(sortby)"
         >
@@ -42,7 +42,7 @@
         </button>
         <button
           type="button"
-          class="btn btn-outline-secondary"
+          class="btn btn-outline-info"
           [ngClass]="{ active: sortby === 'lth' }"
           (click)="sortby = 'lth'; sortByPrice(sortby)"
         >
