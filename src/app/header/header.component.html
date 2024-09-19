@@ -20,11 +20,11 @@
           class="btn btn-outline-light dropdown-toggle"
           data-bs-toggle="dropdown"
         >
-          Categories
+          Categorie
         </button>
         <ul class="dropdown-menu fs-5">
           <ng-container *ngFor="let item of navigationList; let i = index">
-            <!--<li class="text-center fw-bold">{{ item.category | titlecase }}</li>-->
+            <li class="text-center fw-bold">{{ item.category | titlecase }}</li>
             <li
               *ngFor="let subcategory of item.subcategories"
               [style.cursor]="'pointer'"
@@ -68,7 +68,7 @@
         (click)="openModal('register')"
         *ngIf="!utilityService.isLoggedIn()"
       >
-        Register
+        Registrati
       </button>
       <button
         type="button"
@@ -83,7 +83,7 @@
         routerLink="../cart"
         *ngIf="utilityService.isLoggedIn()"
       >
-        Cart
+        Carrello
         <span class="badge bg-warning text-dark">{{ cartItems }}</span>
       </button>
       <button
@@ -92,7 +92,7 @@
         routerLink="../orders"
         *ngIf="utilityService.isLoggedIn()"
       >
-        Orders
+        Ordini
       </button>
       <button
         type="button"

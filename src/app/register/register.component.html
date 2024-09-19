@@ -3,7 +3,7 @@
   <div class="row mb-3">
     <!---------------------First Name------------>
     <div class="col">
-      <label for="firstname" class="form-label">First Name</label>
+      <label for="firstname" class="form-label">Nome</label>
       <input
         type="text"
         class="form-control"
@@ -15,24 +15,24 @@
         class="form-text text-danger"
         *ngIf="FirstName.errors?.['required'] && (FirstName.dirty || FirstName.touched)"
       >
-        First Name is Required
+        Inserire il Nome
       </div>
       <div
         class="form-text text-danger"
         *ngIf="!!FirstName.errors?.['minlength'] && (FirstName.dirty || FirstName.touched)"
       >
-        First Name is too Short. At least 2 characters.
+        Il nome è troppo corto. Inserire almeno 2 caratteri.
       </div>
       <div
         class="form-text text-danger"
         *ngIf="FirstName.errors?.['pattern'] && (FirstName.dirty || FirstName.touched)"
       >
-        Name should start with an alphabet.
+        Il Nome dovrebbe iniziare con una lettera.
       </div>
     </div>
     <!---------------------Last Name------------>
     <div class="col">
-      <label for="lastname" class="form-label">Last Name</label>
+      <label for="lastname" class="form-label">Cognome</label>
       <input
         type="text"
         class="form-control"
@@ -44,26 +44,26 @@
         class="form-text text-danger"
         *ngIf="LastName.errors?.['required'] && (LastName.dirty || LastName.touched)"
       >
-        Last Name is Required
+        Inserire il Cognome
       </div>
       <div
         class="form-text text-danger"
         *ngIf="!!LastName.errors?.['minlength'] && (LastName.dirty || LastName.touched)"
       >
-        Last Name is too Short. At least 2 characters.
+        Il Cognome è troppo corto. Inserire almeno 2 caratteri.
       </div>
       <div
         class="form-text text-danger"
         *ngIf="LastName.errors?.['pattern'] && (LastName.dirty || LastName.touched)"
       >
-        Name should start with an alphabet.
+        Il Cognome dovrebbe iniziare con una lettera.
       </div>
     </div>
   </div>
 
   <!-------------------EMAIL----------------------------->
   <div class="mb-3">
-    <label for="email" class="form-label">Email address</label>
+    <label for="email" class="form-label">Indirizzo Email</label>
     <input
       type="email"
       class="form-control"
@@ -75,19 +75,19 @@
       class="form-text text-danger"
       *ngIf="Email.errors?.['required'] && (Email.dirty || Email.touched)"
     >
-      Email is Required
+      Inserire un' Email.
     </div>
     <div
       class="form-text text-danger"
       *ngIf="Email.errors?.['email'] && (Email.dirty || Email.touched)"
     >
-      Email is Invalid.
+      Email non è valida.
     </div>
   </div>
 
   <!-- Address -->
   <div class="mb-3">
-    <label for="address" class="form-label">Address</label>
+    <label for="address" class="form-label">Indirizzo</label>
     <input
       type="text"
       class="form-control"
@@ -100,13 +100,13 @@
       class="form-text text-danger"
       *ngIf="Address.errors?.['required'] && (Address.dirty || Address.touched)"
     >
-      Address is Required
+      Inserire un indirizzo.
     </div>
   </div>
 
   <!-- Mobile -->
   <div class="mb-3">
-    <label for="mobile" class="form-label">Mobile</label>
+    <label for="mobile" class="form-label">Numero di Telefono</label>
     <input
       type="text"
       class="form-control"
@@ -119,7 +119,7 @@
       class="form-text text-danger"
       *ngIf="Mobile.errors?.['required'] && (Mobile.dirty || Mobile.touched)"
     >
-      Mobile is Required
+      inserire un numero di telefono.
     </div>
   </div>
 
@@ -138,17 +138,17 @@
         class="form-text text-danger"
         *ngIf="PWD.errors?.['required'] && (PWD.dirty || PWD.touched)"
       >
-        Password is Required
+        Inserire una password.
       </div>
       <div
         class="form-text text-danger"
         *ngIf="PWD.errors?.['minlength'] || PWD.errors?.['maxlength'] && (PWD.dirty || PWD.touched)"
       >
-        Password should be at least 6 and at the max 15 characters long.
+        La password deve contenere almeno 6 e massimo 15 caratteri.
       </div>
     </div>
     <div class="col mb-3">
-      <label for="rpwd" class="form-label">Repeat Password</label>
+      <label for="rpwd" class="form-label">Ripeti la password</label>
       <input
         type="password"
         class="form-control"
@@ -157,7 +157,7 @@
       />
       <!-- Errors -->
       <div class="form-text text-danger" *ngIf="invaildRPWD">
-        Doesn't match with Password!
+        Le password non corrispondono!
       </div>
     </div>
   </div>
@@ -169,7 +169,7 @@
       class="d-block mx-auto btn btn-outline-primary"
       [disabled]="registerForm.invalid"
     >
-      Create Account
+      Crea Account
     </button>
   </div>
   <div class="mt-3 text-center">

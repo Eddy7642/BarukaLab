@@ -73,7 +73,7 @@
 
       <div class="card-body">
         <h6 class="card-subtitle my-2 text-primary">
-          {{ product.quantity }} product are available
+          {{ product.quantity }} prodotti disponibili.
         </h6>
 
         <div class="d-grid gap-2">
@@ -83,15 +83,15 @@
             [disabled]="!utilityService.isLoggedIn()"
             (click)="this.utilityService.addToCart(product)"
           >
-            Add to Cart
+            Aggiungi al carrello
             <span *ngif="!utilityService.isLoggedIn()"
-              >(Devi prima eseguire il Login)</span
+              >(Effettua il Login)</span
             >
           </button>
         </div>
       </div>
-      <div class="card-body">
-        <h5 class="card-text">Description</h5>
+      <div class="card-body m-2">
+        <h5 class="card-text">Descrizione</h5>
         <ul class="list-group">
           <li
             class="list-group-item list-group-item-action"
@@ -109,7 +109,7 @@
       <h3
         class="border border-secondary text-center py-2 my-rounded-corner w-25"
       >
-        Related Product
+        Prodotti suggeriti
       </h3>
       <div class="col-12">
         <app-suggested-products
@@ -122,8 +122,8 @@
   <div class="row g-0 my-5">
     <!------------------Users Review----->
     <div class="col p-3">
-      <h3>Give Your Review</h3>
-      <h5 class="mt-4">Write Your Review</h5>
+      <h3>Dicci cosa ne pensi</h3>
+      <h5 class="mt-4">Scrivi una recensione</h5>
       <textarea class="w-75 p-2" [formControl]="reviewControl"></textarea>
       <div class="d-flex align-items-start">
         <button
@@ -131,15 +131,15 @@
           type="button"
           (click)="submitReview()"
         >
-          Save Review
+          Salva Recensione
         </button>
         <div>
           <h6 class="text-danger mt-4" *ngIf="!utilityService.isLoggedIn()">
-            Login first, then enter the review.
+            Devi prima effetturae il Login
           </h6>
           <h6 class="text-danger" *ngIf="showError">Review Cannot Be Empty!</h6>
           <h6 class="text-success" *ngIf="reviewSaved">
-            Review Saved Succesfully!
+            Recensione salvata con successo!
           </h6>
         </div>
       </div>
@@ -147,8 +147,8 @@
 
     <!------------------Other Review------------->
     <div class="col p-3">
-      <h3>Other Reviews</h3>
-      <h6 *ngIf="otherReviews.length === 0">No Reviews Yet!</h6>
+      <h3>Altre recensioni</h3>
+      <h6 *ngIf="otherReviews.length === 0">Nessuna recensione!</h6>
       <div class="card mt-3" *ngFor="let review of otherReviews">
         <div class="card-header d-flex justify-content-between">
           <div class="card-text">
@@ -156,7 +156,7 @@
             {{ review.user.lastName }}
           </div>
           <div class="card-text fst-italic">
-            Reviewed On:
+            Data recensione:
             <span class="fw-bold">
               {{ review.createdAt | date : "dd-MMM-yyyy" }}</span
             >

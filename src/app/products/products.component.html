@@ -7,7 +7,7 @@
         [ngClass]="{ active: view === 'grid' }"
         (click)="view = 'grid'"
       >
-        Grid
+        Griglia
       </button>
       <button
         type="button"
@@ -15,12 +15,14 @@
         [ngClass]="{ active: view === 'list' }"
         (click)="view = 'list'"
       >
-        List
+        Lista
       </button>
     </div>
 
     <div class="w-50 d-flex">
-      <span class="me-5 d-flex align-items-center fs-5 fw-bold">Sorty By</span>
+      <span class="me-5 d-flex align-items-center fs-5 fw-bold"
+        >Ordina per</span
+      >
       <div class="btn-group" role="group">
         <button
           type="button"
@@ -36,7 +38,7 @@
           [ngClass]="{ active: sortby === 'htl' }"
           (click)="sortby = 'htl'; sortByPrice(sortby)"
         >
-          Price (High to Low)
+          Prezzo (dal più alto al più basso)
         </button>
         <button
           type="button"
@@ -44,7 +46,7 @@
           [ngClass]="{ active: sortby === 'lth' }"
           (click)="sortby = 'lth'; sortByPrice(sortby)"
         >
-          Price (Low to High)
+          Prezzo (dal più basso al più alto)
         </button>
       </div>
     </div>
