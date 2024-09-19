@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("BarukaLab.API")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0ae25ba4611218d49422fb95ccdc44545aecade0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6910cafb9cba053ad2b2ad3b906dfb37c0949e90")]
 [assembly: System.Reflection.AssemblyProductAttribute("BarukaLab.API")]
 [assembly: System.Reflection.AssemblyTitleAttribute("BarukaLab.API")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

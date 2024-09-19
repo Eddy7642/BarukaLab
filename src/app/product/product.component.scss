@@ -12,6 +12,7 @@
 img {
   cursor: pointer;
   transition: transform 100ms ease-in-;
+
 }
 img:hover {
   transform: scale(1.05);
@@ -38,4 +39,12 @@ img:hover {
   text-overflow: ellipsis;
   white-space: nowrap;
 }
+
+.card-img-top {
+  height: 300px; /* Imposta un'altezza fissa */
+  width: 100%; /* L'immagine occuperà tutta la larghezza del contenitore */
+  object-fit: cover; /* Mantiene le proporzioni dell'immagine e riempie il contenitore */
+}
+
+
 
