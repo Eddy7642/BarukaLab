@@ -1,6 +1,6 @@
 <div class="grid-view" *ngIf="view === 'grid'">
   <div class="card text-center m-3">
-    <div class="card-header fw-bold fs-5 text-success">Header</div>
+    <div class="card-header fw-bold fs-5 text-success">Articolo</div>
 
     <div
       class="overflow-hidden d-flex justify-content-center align-items-center"
@@ -17,7 +17,7 @@
     <div class="card-body">
       <h5 class="card-title title">{{ product.title }}</h5>
       <h6 class="card-subtitle my-2 text-primary">
-        {{ product.quantity }} product are available.
+        {{ product.quantity }} prodotti disponibili.
       </h6>
       <p class="card-text description">{{ product.description }}</p>
     </div>
@@ -39,10 +39,8 @@
           [disabled]="!utilityService.isLoggedIn()"
           (click)="this.utilityService.addToCart(product)"
         >
-          Add to Cart
-          <span *ngIf="!utilityService.isLoggedIn()"
-            >(Devi prima effettuare il Login)</span
-          >
+          Aggiungi al carrello
+          <span *ngIf="!utilityService.isLoggedIn()">(Effettua il Login)</span>
         </button>
       </div>
     </div>
@@ -67,18 +65,18 @@
       </div>
 
       <div class="col d-flex flex-column">
-        <div class="card-header text-center">Header</div>
+        <div class="card-header text-center">Articolo</div>
 
         <div class="card-body">
           <h5 class="card-title title">{{ product.title }}</h5>
           <p class="card-text description">{{ product.description }}</p>
           <h6 class="card-subtitle mb-3 text-primary">
-            {{ product.quantity }} products are available.
+            {{ product.quantity }} prodotti disponibili.
           </h6>
         </div>
 
         <div class="card-body">
-          <h4 class="card-title text-muted">Pricing</h4>
+          <h4 class="card-title text-muted">Prezzo</h4>
           <h2 class="card-title text-success">
             {{
               utilityService.applyDiscount(
@@ -100,9 +98,9 @@
             [disabled]="!utilityService.isLoggedIn()"
             (click)="this.utilityService.addToCart(product)"
           >
-            Add to Cart
+            Aggiungi al carrello
             <span *ngIf="!utilityService.isLoggedIn()"
-              >(Devi prima effettuare il Login)</span
+              >(Effettua il Login)</span
             >
           </button>
         </div>
@@ -143,11 +141,6 @@
           <h6 class="card-subtitle text-danger text-decoration-line-through">
             {{ product.price }}€
           </h6>
-        </div>
-        <div class="card-footer text-muted d-grid gap-2">
-          <button class="btn btn-outline-danger" type="button">
-            Remove From Cart
-          </button>
         </div>
       </div>
     </div>

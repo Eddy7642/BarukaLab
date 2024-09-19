@@ -37,11 +37,11 @@ export class LoginComponent implements OnInit {
       .loginUser(this.Email.value, this.PWD.value)
       .subscribe((res: any) => {
         if (res.toString() !== 'invalid') {
-          this.message = 'Logged In Successfully.';
+          this.message = 'Accesso effettuato con successo.';
           this.utilityService.setUser(res.toString());
           console.log(this.utilityService.getUser());
         } else {
-          this.message = 'Invalid Credentials!';
+          this.message = 'Email o password non valide!';
         }
       });
   }

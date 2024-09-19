@@ -12,13 +12,13 @@
       class="form-text text-danger"
       *ngIf="Email.errors?.['required'] && (Email.dirty || Email.touched)"
     >
-      Email is Required
+      Inserire un' Email
     </div>
     <div
       class="form-text text-danger"
       *ngIf="Email.errors?.['email'] && (Email.dirty || Email.touched)"
     >
-      Email is Invalid.
+      L'email inserita non è valida
     </div>
   </div>
 
@@ -35,13 +35,13 @@
       class="form-text text-danger"
       *ngIf="PWD.errors?.['required'] && (PWD.dirty || PWD.touched)"
     >
-      Password is Required
+      Inserire una password
     </div>
     <div
       class="form-text text-danger"
       *ngIf="PWD.errors?.['minlength'] || PWD.errors?.['maxlength'] && (PWD.dirty || PWD.touched)"
     >
-      Password should be at least 6 and at the max 15 characters long.
+      La password deve contenere almeno 6 e massimo 15 caratteri.
     </div>
   </div>
 
@@ -57,7 +57,6 @@
   </div>
 
   <div class="mt-3 text-center">
-    <h5 class="text-success">{{message}}</h5>
-</div>
-
+    <h5 class="text-success">{{ message }}</h5>
+  </div>
 </form>

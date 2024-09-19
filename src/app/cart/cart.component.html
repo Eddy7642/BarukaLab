@@ -1,6 +1,8 @@
 <div class="my-container mx-auto border border-dark">
   <div class="p-4 border my-rounded-corner">
-    <h3 class="w-25 border text-center py-2 my-rounded-corner">Current Cart</h3>
+    <h3 class="w-25 border text-center py-2 my-rounded-corner">
+      Il tuo carrello
+    </h3>
     <div class="mt-5">
       <div class="d-grid w-50 mx-auto mb-3">
         <button
@@ -8,35 +10,35 @@
           type="button"
           routerLink="/orders"
         >
-          Order
+          Compra
         </button>
       </div>
       <table class="table w-50 mx-auto table-bordered table-hover my-shadow">
         <tbody>
           <tr>
-            <td>Total Items</td>
+            <td>Totale Prodotti</td>
             <td class="fs-5 fw-bold">{{ usersCart.cartItems.length }}</td>
           </tr>
           <tr>
-            <td>Total Price</td>
+            <td>Prezzo Totale</td>
             <td class="fs-5 fw-bold text-danger">
               {{ usersPaymentInfo.totalAmount }}€
             </td>
           </tr>
           <tr>
-            <td>Shipping Charges</td>
+            <td>Spese di Spedizione</td>
             <td class="fs-5 fw-bold text-danger">
               {{ usersPaymentInfo.shipingCharges }}€
             </td>
           </tr>
           <tr>
-            <td>Discount</td>
+            <td>Sconto</td>
             <td class="fs-5 fw-bold text-success">
               {{ usersPaymentInfo.amountReduced }}€
             </td>
           </tr>
           <tr>
-            <td>You Have to Pay</td>
+            <td>Totale da Pagare</td>
             <td class="fs-5 fw-bold text-success">
               {{ usersPaymentInfo.amountPaid }}€
             </td>
@@ -45,7 +47,7 @@
       </table>
     </div>
     <div class="current-cart-items w-75 mx-auto mt-5">
-      <h4>Cart Items</h4>
+      <h4>Articoli nel Carrello</h4>
       <div class="row mt-4 g-0">
         <div
           class="col-6 py-3 px-2"
@@ -62,19 +64,19 @@
 
   <div class="mt-5 p-4 border my-rounded-corner">
     <h3 class="w-25 border text-center py-2 mb-5 my-rounded-corner">
-      Previous Carts
+      Acquisti Precedenti
     </h3>
     <div class="card mb-5" *ngFor="let cart of usersPreviousCarts">
       <div
         class="card-header d-flex fw-bold justify-content-between align-items-center"
       >
         <span class="time"
-          >Order On :
+          >Data ordine :
           <span class="fs-5">{{ cart.orderedOn | date : "dd-MMM-YYYY" }}</span>
         </span>
         <span class="count">Items: {{ cart.cartItems.length }}</span>
         <span class="price"
-          >Price Paid :
+          >Totale pagato :
           <span class="fs-5">{{
             utilityService.calculatePricePaid(cart)
           }}</span></span
