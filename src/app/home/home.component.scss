@@ -1,0 +1,23 @@
+
+.scrolling-container {
+  width: 100vw;             /* Larghezza del viewport */
+
+  box-sizing: border-box;
+  white-space: nowrap;      /* Impedisce che il testo vada a capo */
+}
+
+.scrolling-text {
+  display: inline-block;
+  font-style: italic;       /* Corsivo */
+  font-size: 3rem;          /* Dimensione del testo */
+  animation: scroll 20s linear infinite; /* Animazione continua e senza pause */
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(200%);      /* Parte da fuori schermo a destra */
+  }
+  100% {
+    transform: translateX(-200%);     /* Scorre completamente fuori schermo a sinistra */
+  }
+}
